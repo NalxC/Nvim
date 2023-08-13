@@ -2,7 +2,7 @@ return {
     -- Colorscheme
     {
         'ellisonleao/gruvbox.nvim',
-        --cond = false, -- 安装不加载 
+        cond = require("custom").colorschemes == "gruvbox",
         lazy = false,
         priority = 1000,
         opts = function()
@@ -12,7 +12,7 @@ return {
     },
     {
         'navarasu/onedark.nvim',
-        cond = false, -- 安装不加载 
+        cond = require("custom").colorschemes == "onedark",
         lazy = false,
         priority = 1000,
         opts = function()
@@ -28,8 +28,9 @@ return {
         'nvim-lualine/lualine.nvim',
         lazy = false,
         config = function()
-          require('lualine').setup()
-          options = { theme = 'gruvbox' }
+          require('lualine').setup {
+              -- options = { theme = 'gruvbox' },
+          }
         end
     },
     -- BufflineSkin

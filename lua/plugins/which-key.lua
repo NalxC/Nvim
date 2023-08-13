@@ -4,14 +4,14 @@ return {
         event = "VeryLazy",
         init = function()
             vim.o.timeout = true
-            vim.o.timeoutlen = 150
+            vim.o.timeoutlen = 300
         end,
         opts = {
         -- your configuration comes here
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
         },
-        config = function ()
+        config = function (_, opts)
             local nopts = {
                 mode = "n", -- NORMAL mode
                 -- prefix: use "<leader>f" for example for mapping everything related to finding files
@@ -163,6 +163,7 @@ return {
             }
 
             local wk = require("which-key")
+            wk.setup(opts)
             wk.register(nmappings, nopts)
         end
     }
