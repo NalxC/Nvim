@@ -40,8 +40,23 @@ return {
         version = "*",
         dependencies = 'nvim-tree/nvim-web-devicons',
         config = function()
-          vim.opt.termguicolors = true
-          require("bufferline").setup{}
+            vim.opt.termguicolors = true
+            require("bufferline").setup{
+                options = {
+                    -- 使用 nvim 内置lsp
+                    diagnostics = "nvim_lsp",
+                    diagnostics_update_in_insert = false,
+                    -- 左侧让出 nvim-tree 的位置
+                    offsets = {
+                        {
+                            filetype = "NvimTree",
+                            text = "EXPLORER",
+                            highlight = "PanelHeading",
+                            text_align = "left"
+                        },
+                    }
+                },
+            }
         end
     },
     -- show tabs
