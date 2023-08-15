@@ -1,29 +1,10 @@
 return {
     {
-        "williamboman/mason.nvim",
-        config = function()
-            require("mason").setup({
-                ui = {
-                    icons = {
-                        package_installed = "✓",
-                        package_pending = "➜",
-                        package_uninstalled = "✗"
-                    }
-                }
-            })
-        end
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        config = function()
-            local servers = require("custom").lsp_servers
-            require("mason-lspconfig").setup {
-                ensure_installed = servers,
-            }
-        end
-    },
-    {
         "neovim/nvim-lspconfig",
+        dependencies = {
+            "williamboman/mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+        },
         config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
             local servers = require("custom").lsp_servers

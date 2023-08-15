@@ -1,9 +1,13 @@
 return {
+    colorschemes = "onedark",
+    use_icons = true,
     lsp_servers = {
         "lua_ls",
         "clangd",
+        "marksman",
     },
-    colorschemes = "onedark",
-    use_icons = true,
+    debug_adapters = {
+        "codelldb",
+    },
     -- plugin_keymapping = {},
 }

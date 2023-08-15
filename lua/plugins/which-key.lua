@@ -27,7 +27,7 @@ return {
             local nmappings = {
                 ["w"] = { "<cmd>w!<CR>", "Save" },
                 ["q"] = { "<cmd>confirm q<CR>", "Quit" },
-                ["c"] = { "<cmd>BufferKill<CR>", "Close Buffer" },
+                ["c"] = { "<cmd>bd<CR>", "Close Buffer" },
                 -- f = {
                 --     name = "file", -- optional group name
                 --     f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
