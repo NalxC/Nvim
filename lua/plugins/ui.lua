@@ -57,11 +57,24 @@ return {
                     always_show_bufferline = false,
                     diagnostics = "nvim_lsp",
                     diagnostics_update_in_insert = false,
-                    diagnostics_indicator = function(_, _, diag)
+                    diagnostics_indicator = function(num, _, diag)
+                        if not require("custom").use_icons then
+                            return "(" .. num .. ")"
+                        end
                         local icons = require("icons").diagnostics
-                        local ret = (diag.error and icons.Error .. diag.error .. " " or "")
-                        .. (diag.warning and icons.Warning .. diag.warning or "")
-                        return vim.trim(ret)
+                        local symbols = {
+                            error = icons.Error,
+                            warning = icons.Warning,
+                            info = icons.Information,
+                        }
+                        local result = {}
+                        for name, count in pairs(diag) do
+                            if symbols[name] and count > 0 then
+                                table.insert(result, symbols[name] .. " " .. count)
+                            end
+                        end
+                        result = table.concat(result, " ")
+                        return #result > 0 and result or ""
                     end,
                     -- 左侧让出 nvim-tree 的位置
                     offsets = {
