@@ -2,7 +2,7 @@ return {
     -- Colorscheme
     {
         'ellisonleao/gruvbox.nvim',
-        cond = require("custom").colorschemes == "gruvbox",
+        cond = Custom.settings.colorschemes == "gruvbox",
         lazy = false,
         priority = 1000,
         config = function()
@@ -12,7 +12,7 @@ return {
     },
     {
         'navarasu/onedark.nvim',
-        cond = require("custom").colorschemes == "onedark",
+        cond = Custom.settings.colorschemes == "onedark",
         lazy = false,
         priority = 1000,
         config = function()
@@ -25,7 +25,7 @@ return {
     },
     {
         'loctvl842/monokai-pro.nvim',
-        cond = require("custom").colorschemes == "monokai-pro",
+        cond = Custom.settings.colorschemes == "monokai-pro",
         lazy = false,
         priority = 1000,
         config = function ()
@@ -58,10 +58,10 @@ return {
                     diagnostics = "nvim_lsp",
                     diagnostics_update_in_insert = false,
                     diagnostics_indicator = function(num, _, diag)
-                        if not require("custom").use_icons then
+                        if not Custom.settings.use_icons then
                             return "(" .. num .. ")"
                         end
-                        local icons = require("icons").diagnostics
+                        local icons = Custom.icons.diagnostics
                         local symbols = {
                             error = icons.Error,
                             warning = icons.Warning,

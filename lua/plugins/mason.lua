@@ -16,7 +16,7 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         config = function()
-            local servers = require("custom").lsp_servers
+            local servers = Custom.settings.lsp_servers
             require("mason-lspconfig").setup {
                 ensure_installed = servers,
             }
@@ -25,7 +25,7 @@ return {
     {
         "jay-babu/mason-nvim-dap.nvim",
         config = function ()
-            local daps = require("custom").debug_adapters
+            local daps = Custom.settings.debug_adapters
             require ('mason-nvim-dap').setup({
                 ensure_installed = daps,
                 handlers = {}, -- sets up dap in the predefined manner
