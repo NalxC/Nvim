@@ -35,6 +35,7 @@ return {
                 --     n = { "New File" }, -- just a label. don't create any mapping
                 -- },
                 ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+                ["o"] = { "<cmd>AerialToggle<CR>", "Outline" },
                 b = {
                     name = "Buffers",
                     j = { "<cmd>BufferLinePick<cr>", "Jump" },
