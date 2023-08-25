@@ -161,6 +161,14 @@ return {
                       "Git Diff",
                     },
                 },
+                x = {
+                    name = "Trouble",
+                    x = {"<cmd>TroubleToggle<cr>", "Trouble"},
+                    w = {"<cmd>TroubleToggle workspace_diagnostics<cr>", "Trouble workspace"},
+                    d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Trouble document"},
+                    q = {"<cmd>TroubleToggle quickfix<cr>", "Trouble quickfix"},
+                    l = {"<cmd>TroubleToggle loclist<cr>", "Trouble loclist"},
+                },
             }
 
             local wk = require("which-key")
