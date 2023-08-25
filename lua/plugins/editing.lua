@@ -20,5 +20,16 @@ return {
                 -- Configuration here, or leave empty to use defaults
             })
         end
-    }
+    },
+    -- visual-multi
+    {
+        'mg979/vim-visual-multi',
+        version = "*",
+        event = "VeryLazy",
+        -- init = function()
+        --     vim.g.VM_maps = {
+        --         ["Find Under"] = ""
+        --     }
+        -- end,
+    },
 }
