@@ -30,7 +30,7 @@ return {
         priority = 1000,
         config = function ()
             require("monokai-pro").setup({
-                filter = "machine", -- classic | octagon | pro | machine | ristretto | spectrum
+                filter = "octagon", -- classic | octagon | pro | machine | ristretto | spectrum
             })
             vim.cmd([[colorscheme monokai-pro]])
         end
