@@ -1,6 +1,7 @@
 return {
     {
         'ggandor/leap.nvim',
+        event = "VeryLazy",
         config = function()
             require('leap').add_default_mappings()
         end
@@ -8,6 +9,7 @@ return {
 
     {
         "folke/trouble.nvim",
+        event = "VeryLazy",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         opts = {
             -- your configuration comes here

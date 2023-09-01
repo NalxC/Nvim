@@ -56,6 +56,7 @@ return {
     -- show tabs
     {
         'lukas-reineke/indent-blankline.nvim',
+        event = { "BufReadPost", "BufNewFile" },
         config = function()
             -- vim.opt.list = true
             -- vim.opt.listchars:append "space:⋅"

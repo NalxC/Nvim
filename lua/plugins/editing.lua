@@ -8,6 +8,7 @@ return {
     -- Comment
     {
         'numToStr/Comment.nvim',
+        event = "VeryLazy",
         opts = {}
     },
     -- surround

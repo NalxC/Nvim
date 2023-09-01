@@ -35,4 +35,16 @@ return {
             vim.cmd([[colorscheme monokai-pro]])
         end
     },
+    {
+        "folke/tokyonight.nvim",
+        cond = Custom.settings.colorschemes == "tokyonight",
+        lazy = false,
+        priority = 1000,
+        config = function ()
+            require("tokyonight").setup({
+                style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+            })
+            vim.cmd[[colorscheme tokyonight]]
+        end
+    },
 }
