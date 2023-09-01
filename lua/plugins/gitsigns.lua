@@ -44,5 +44,5 @@ return {
                 enable = false
               },
         }
-    }
+    },
 }

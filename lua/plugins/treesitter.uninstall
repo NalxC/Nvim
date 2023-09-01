@@ -1,6 +1,7 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    event = "User FileOpened",
+    build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
     cmd = {
         "TSInstall",
         "TSUninstall",

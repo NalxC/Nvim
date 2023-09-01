@@ -1,6 +1,6 @@
 return {
     'stevearc/aerial.nvim',
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPost", "BufNewFile" },
     opts = {
         layout = {
             -- These control the width of the aerial window.
