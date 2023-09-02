@@ -2,7 +2,7 @@ return {
     -- Colorscheme
     {
         'ellisonleao/gruvbox.nvim',
-        cond = Custom.settings.colorschemes == "gruvbox",
+        cond = Conf.custom.colorschemes == "gruvbox",
         lazy = false,
         priority = 1000,
         config = function()
@@ -12,7 +12,7 @@ return {
     },
     {
         'navarasu/onedark.nvim',
-        cond = Custom.settings.colorschemes == "onedark",
+        cond = Conf.custom.colorschemes == "onedark",
         lazy = false,
         priority = 1000,
         config = function()
@@ -25,7 +25,7 @@ return {
     },
     {
         'loctvl842/monokai-pro.nvim',
-        cond = Custom.settings.colorschemes == "monokai-pro",
+        cond = Conf.custom.colorschemes == "monokai-pro",
         lazy = false,
         priority = 1000,
         config = function ()
@@ -37,7 +37,7 @@ return {
     },
     {
         "folke/tokyonight.nvim",
-        cond = Custom.settings.colorschemes == "tokyonight",
+        cond = Conf.custom.colorschemes == "tokyonight",
         lazy = false,
         priority = 1000,
         config = function ()

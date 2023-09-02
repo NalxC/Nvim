@@ -7,12 +7,12 @@ return {
         },
         config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
-            local servers = Custom.settings.lsp_servers
+            local servers = Conf.custom.lsp_servers
             local lspconfig = require("lspconfig")
 
             -- sign-icon
-            if Custom.settings.use_icons then
-                local dia_icons = Custom.icons.diagnostics
+            if Conf.custom.use_icons then
+                local dia_icons = Conf.icons.diagnostics
                 local signs = { Error = dia_icons.Error, Warn = dia_icons.Warning, Hint = dia_icons.Hint, Info = dia_icons.Information }
                 for type, icon in pairs(signs) do
                   local hl = "DiagnosticSign" .. type

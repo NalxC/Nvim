@@ -22,10 +22,10 @@ return {
                     diagnostics = "nvim_lsp",
                     diagnostics_update_in_insert = false,
                     diagnostics_indicator = function(num, _, diag)
-                        if not Custom.settings.use_icons then
+                        if not Conf.custom.use_icons then
                             return "(" .. num .. ")"
                         end
-                        local icons = Custom.icons.diagnostics
+                        local icons = Conf.icons.diagnostics
                         local symbols = {
                             error = icons.Error,
                             warning = icons.Warning,
