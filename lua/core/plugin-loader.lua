@@ -11,4 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("plugins")
+local plugins = Conf.custom.enable_module
+table.insert(plugins, 1, {import = "plugins"})
+require("lazy").setup({
+    spec = plugins,
+})
