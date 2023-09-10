@@ -5,10 +5,16 @@ return {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
         },
-        config = function()
+        opts = {
+            servers = {
+                lua_ls = {},
+                marksman = {},
+            },
+        },
+        config = function(_, opts)
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
-            local servers = Conf.custom.lsp_servers
             local lspconfig = require("lspconfig")
+            local servers = opts.servers
 
             -- sign-icon
             if Conf.custom.use_icons then
@@ -54,13 +60,19 @@ return {
                end
             end
 
+            local ensure_installed = {}
             -- setup
-            for _, server in pairs(servers) do
+            for server, server_opts in pairs(servers) do
                 lspconfig[server].setup {
                     capabilities = capabilities,
                     on_attach = on_attach,
                 }
+                ensure_installed[#ensure_installed + 1] = server
             end
+            -- mason-lspconfig
+            require("mason-lspconfig").setup {
+                ensure_installed = ensure_installed,
+            }
         end
     }
 }

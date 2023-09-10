@@ -15,17 +15,18 @@ return {
     },
     {
         "williamboman/mason-lspconfig.nvim",
-        config = function()
-            local servers = Conf.custom.lsp_servers
-            require("mason-lspconfig").setup {
-                ensure_installed = servers,
-            }
-        end
+        -- config = function()
+        --     local servers = Conf.custom.lsp_servers
+        --     require("mason-lspconfig").setup {
+        --         ensure_installed = servers,
+        --     }
+        -- end
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
-        config = function ()
-            local daps = Conf.custom.debug_adapters
+        opts = {},
+        config = function (_, opts)
+            local daps = opts.ensure_installed
             require ('mason-nvim-dap').setup({
                 ensure_installed = daps,
                 handlers = {}, -- sets up dap in the predefined manner
