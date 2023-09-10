@@ -10,6 +10,7 @@ return {
                 lua_ls = {},
                 marksman = {},
             },
+            setup = {},
         },
         config = function(_, opts)
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -60,13 +61,22 @@ return {
                end
             end
 
-            local ensure_installed = {}
+            local function setup(server)
+                local server_opts = vim.tbl_deep_extend("force", {
+                    capabilities = vim.deepcopy(capabilities),
+                }, {on_attach = on_attach}, servers[server] or {})
+
+                if opts.setup[server] then
+                    if opts.setup[server](server, server_opts) then
+                        return
+                    end
+                end
+                lspconfig[server].setup(server_opts)
+            end
             -- setup
+            local ensure_installed = {}
             for server, server_opts in pairs(servers) do
-                lspconfig[server].setup {
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                }
+                setup(server)
                 ensure_installed[#ensure_installed + 1] = server
             end
             -- mason-lspconfig

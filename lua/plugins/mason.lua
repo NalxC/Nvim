@@ -24,7 +24,9 @@ return {
     },
     {
         "jay-babu/mason-nvim-dap.nvim",
-        opts = {},
+        opts = {
+            ensure_installed = {},
+        },
         config = function (_, opts)
             local daps = opts.ensure_installed
             require ('mason-nvim-dap').setup({
