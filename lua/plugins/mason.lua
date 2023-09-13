@@ -13,15 +13,15 @@ return {
             })
         end
     },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        -- config = function()
-        --     local servers = Conf.custom.lsp_servers
-        --     require("mason-lspconfig").setup {
-        --         ensure_installed = servers,
-        --     }
-        -- end
-    },
+    -- {
+    --     "williamboman/mason-lspconfig.nvim",
+    --     config = function()
+    --         local servers = Conf.custom.lsp_servers
+    --         require("mason-lspconfig").setup {
+    --             ensure_installed = servers,
+    --         }
+    --     end
+    -- },
     {
         "jay-babu/mason-nvim-dap.nvim",
         opts = {
