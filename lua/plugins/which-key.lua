@@ -25,15 +25,6 @@ return {
             }
 
             local nmappings = {
-                ["w"] = { "<cmd>w!<CR>", "Save" },
-                ["q"] = { "<cmd>confirm q<CR>", "Quit" },
-                ["c"] = { "<cmd>bd<CR>", "Close Buffer" },
-                -- f = {
-                --     name = "file", -- optional group name
-                --     f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
-                --     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap=false, buffer = 123 }, -- additional options for creating the keymap
-                --     n = { "New File" }, -- just a label. don't create any mapping
-                -- },
                 ["e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
                 ["o"] = { "<cmd>AerialToggle<CR>", "Outline" },
                 b = {
