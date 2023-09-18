@@ -4,5 +4,6 @@ return {
     enable_module = {
         {import = "plugins.module.clangd"},
         {import = "plugins.module.go"},
+        {import = "plugins.module.python"},
     },
 }
