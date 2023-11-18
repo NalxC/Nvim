@@ -8,6 +8,7 @@ git clone https://github.com/NalxC/Nvim.git ~/.config/nvim
 ### Usage
 
 `lua/config/...` 自定义基础配置
+
 `lua/plugin/...` 添加和修改插件
 
 ### Todo
